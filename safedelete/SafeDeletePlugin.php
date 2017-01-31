@@ -112,6 +112,7 @@ class SafeDeletePlugin extends BasePlugin
         $userSessionService = craft()->userSession;
 
         if (
+            isset($sections->id) &&
             $userSessionService->checkPermission('deleteEntries:'.$section->id) &&
             $userSessionService->checkPermission('deletePeerEntries:'.$section->id)
         )
